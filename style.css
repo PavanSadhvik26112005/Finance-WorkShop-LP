@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 18vh;
+    background-color: #1E3A8A;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.container h1 {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.container h3 {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+
+.button {
+    background-color: #FFA500;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: background-position 0.5s ease-in-out, transform 0.3s ease-in-out;
+    background-size: 200% 100%;
+    background-position: left;
+}
+
+.button:hover {
+    background-position: right;
+    transform: scale(1.05);
+}
+
+
+#overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+
+#formContainer {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    height: 80vh;
+    z-index: 1100;
+    display: none;
+    overflow-y: auto;
+    text-align: center ;
+   
+}
+
+#formContainer iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    border-radius: 8px;
+    
+}
+
+#closeForm {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 40%;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+
+}
+
+#closeForm:hover {
+    background-color: #2048b4;
+}
+
+#thankYouPopUp {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1200;
+}
+
+.thankYouContent {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: scaleUp 0.4s ease;
+}
+
+.thankYouContent h2 { color: #2e7d32; margin-bottom: 10px; }
+.thankYouContent p { font-size: 16px; color: #555; margin-bottom: 20px; }
+.thankYouContent button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+@keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.problem, .value {
+    width: 100%;
+    background-color: #F3F4F6;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.problem h3, .value h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.problem ul, .value ul {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.problem ul li {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.problem ul li::before {
+    content: "🚫 ";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.value ul li {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.value ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    color: #2a9d8f;
+    font-weight: bold;
+}
+
+.testimonials {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.test-container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.inner {
+    flex: 0 0 30%;
+    min-width: 30%;
+    background-color: beige;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    scroll-snap-align: center;
+}
+
+
+.footcontainer {
+    width: 100%;
+    text-align: center;
+    background-color: #1E3A8A;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.footcontainer h1 { font-weight: 500; font-size: 2rem; padding-bottom: 0.5rem; }
+.footcontainer h4 { font-weight: 400; padding-bottom: 1rem; }
+.footcontainer p { padding-top: 1rem; }
+
+
+@media (max-width: 768px) {
+    .container h1 { font-size: 1.5rem; }
+    .container h3 { font-size: 0.9rem; }
+    .problem h3, .value h3, .testimonials h3 { font-size: 1.4rem; }
+    .problem ul li, .value ul li { font-size: 0.85rem; }
+    .inner { flex: 0 0 80%; min-width: 80%; }
+}
+
+@media (min-width: 1024px) {
+    .container { padding: 4rem 2rem; }
+    .problem, .value, .testimonials { padding: 2rem 2rem; }
+    .inner { flex: 0 0 30%; }
+}
