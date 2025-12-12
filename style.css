@@ -60,67 +60,171 @@ html, body {
 }
 
 
-#overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1000;
-    display: none;
+
+/* ========= MODAL OVERLAY ========= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-#formContainer {
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    width: 80%;
-    max-width: 700px;
-    height: 80vh;
-    z-index: 1100;
-    display: none;
-    overflow-y: auto;
-    text-align: center ;
-   
+/* ========= MODAL BOX ========= */
+.modal-container {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  animation: fadeUp 0.3s ease;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+    max-height: 400px;       /* prevents giant modal */
+    overflow-y: auto;        /* scroll inside if content is long */
+    padding: 32px;
 }
 
-#formContainer iframe {
-    width: 100%;
-    height: 80vh;
-    border: none;
-    border-radius: 8px;
-    
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1b1f3b;
+  margin-bottom: 6px;
 }
 
-#closeForm {
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 40%;
-    border: none;
-    border-radius: 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-
+.modal-sub {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
-#closeForm:hover {
-    background-color: #2048b4;
+/* ========= CLOSE BUTTON ========= */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #334155;
 }
 
-#thankYouPopUp {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1200;
+/* ========= INPUTS ========= */
+.input-group {
+  margin-bottom: 18px;
 }
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.optional {
+  color: #64748b;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.hint {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* ========= BUTTON ========= */
+.modal-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-btn:hover {
+  background: linear-gradient(135deg, #0b3c8c, #155aad);
+}
+
+/* ========= ANIMATION ========= */
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* ========= THANK YOU POPUP ========= */
+.thankyou-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.thankYouContent {
+  background: #fff;
+  padding: 26px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+  animation: fadeUp 0.3s ease;
+}
+
+.thankYouContent h2 {
+  color: #1b1f3b;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.thankYouContent p {
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.thankYouContent button {
+  padding: 12px 22px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
 
 .thankYouContent {
     background: #fff;
@@ -256,4 +360,5 @@ html, body {
     .container { padding: 4rem 2rem; }
     .problem, .value, .testimonials { padding: 2rem 2rem; }
     .inner { flex: 0 0 30%; }
+   
 }

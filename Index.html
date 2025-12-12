@@ -37,14 +37,41 @@
 </header>
 
 
-<div id="overlay"></div>
-<div id="formContainer">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScg6qwPEOFeQQnqA9L8oR7UsLeQPMUUIswzKXNRXt8v3Vs4sA/viewform?embedded=true"></iframe>
-    <button id="closeForm">I've Submitted</button>
+<!-- Custom Finance Modal -->
+<div id="leadModal" class="modal-overlay">
+  <div class="modal-container">
+    <button class="modal-close" onclick="closeModal()">×</button>
+
+    <h2 class="modal-title">Join the Masterclass</h2>
+    <p class="modal-sub">Enter your details to reserve your seat</p>
+
+    <form id="leadForm">
+      <div class="input-group">
+        <label>Name</label>
+        <input type="text" name="name" required placeholder="Your full name">
+      </div>
+
+      <div class="input-group">
+        <label>Email <span class="optional">(optional)</span></label>
+        <input type="email" name="email" placeholder="you@example.com">
+      </div>
+
+      <div class="input-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required pattern="[6-9]\d{9}" maxlength="10" placeholder="10-digit Indian mobile number">
+        <small class="hint">Must start with 6, 7, 8, or 9</small>
+      </div>
+
+      <button type="submit" class="modal-btn">Register Now</button>
+    </form>
+  </div>
 </div>
 
 
-<div id="thankYouPopUp">
+
+
+
+<div id="thankYouPopUp" class="thankyou-overlay">
     <div class="thankYouContent">
         <h2>🎉 Thank you for registering!</h2>
         <p>We’ve received your details. Check your email for confirmation soon.</p>
